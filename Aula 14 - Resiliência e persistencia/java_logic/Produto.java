@@ -1,4 +1,4 @@
-public class Produto {
+public class Produto { 
     // Atributos Privados: O "Campo de Força" do Objeto
     private String nome;
     private int estoqueReal;
@@ -11,7 +11,7 @@ public class Produto {
         this.estoqueIdeal = estoqueIdeal;
     }
 
-    // Passo 2: Implementando a Inteligência (Nível Intermediário)
+    //Passo 2: Implementando a Inteligência (Nível Intermediário)
     public boolean verificarNecessidadeCompra() {
         // A inteligência de negócio agora reside na entidade
         double limiteMinimo = this.estoqueIdeal * 0.20;
@@ -29,5 +29,6 @@ public class Produto {
             System.out.println("ERRO: Operação Bloqueada para " + this.nome + "!");
             System.out.println("Risco de Estoque Negativo. Saldo disponível: " + this.estoqueReal);
         }
-    }
+    }    
 }
+
