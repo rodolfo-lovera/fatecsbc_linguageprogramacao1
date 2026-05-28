@@ -3,7 +3,7 @@ PROJETO DE EXTENSÃO: SISTEMA DE GESTÃO DA SORVETERIA DO DENER
 FASE 1: Engenharia de Dados e Regras de Negócio (Abordagem Agnóstica/Primitiva)
 """
 
-from decimal import Decimal, ROUND_HALF_UP
+from decimal import Decimal
 
 # --- 1. MODELAGEM DOS DADOS (Estruturas Primitivas e Alta Precisão) ---
 
