@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sorveteria do Dener - Gestão de Estoque</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>🍦 Sorveteria do Dener</h1>
+            <p>Painel de Controle de Insumos Multiplataforma</p>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for categoria, mensagem in messages %}
+        <div class="alert {{ categoria }}">{{ mensagem }}</div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <div class="grid-sistema">
+            <section class="card-formulario">
+                <h2>Novo Insumo</h2>
+                <form action="/" method="POST">
+                    <div class="campo">
+                        <label for="nome">Nome do Insumo:</label>
+                        <input type="text" id="nome" name="nome" placeholder="Ex: Morango Fresco">
+                    </div>
+
+                    <div class="campo">
+                        <label for="quantidade">Quantidade Inicial:</label>
+                        <input type="text" id="quantidade" name="quantidade" placeholder="Ex: 15.5">
+                    </div>
+
+                    <div class="campo">
+                        <label for="unidade">Unidade de Medida:</label>
+                        <input type="text" id="unidade" name="unidade" placeholder="Ex: kg, Litros, Un">
+                    </div>
+
+                    <button type="submit" class="btn-salvar">Gravar no Banco</button>
+                </form>
+            </section>
+
+            <section class="card-tabela">
+                <h2>Estoque Cadastrado</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Insumo</th>
+                            <th>Quantidade</th>
+                            <th>Medida</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for insumo in insumos %}
+                        <tr>
+                            <td>{{ insumo[0] }}</td>
+                            <td><strong>{{ insumo[1] }}</strong></td>
+                            <td>{{ insumo[2] }}</td>
+                            <td><span class="badge">{{ insumo[3] }}</span></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+
+</body>
+
+</html>
