@@ -1,0 +1,21 @@
+# Ambiente Virtual
+.venv/
+
+# Dependências (opcional, mas recomendado)
+.Python
+env/
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Logs e Bancos de Dados
+*.log
+*.sqlite
+*.sqlite3
+instance/
+
+
+# Configurações do IDE e OS
+.vscode/

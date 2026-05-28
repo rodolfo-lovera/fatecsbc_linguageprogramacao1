@@ -1,0 +1,10 @@
+projeto_extensao/
+│
+├── database_manager.py   (Módulo de controle do SQLite)
+├── app_web.py            (Módulo Servidor Flask / Backend)
+│
+├── templates/            (Pasta obrigatória para arquivos HTML)
+│   └── estoque.html
+│
+└── static/               (Pasta obrigatória para arquivos CSS, JS e imagens)
+    └── style.css
